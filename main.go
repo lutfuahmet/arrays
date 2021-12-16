@@ -60,3 +60,20 @@ func ArrayUniqueMerge[T any](arrays ...[]T) []T {
 	}
 	return result
 }
+
+// ArrayDiff returns the values from src that are not present in other arrays
+func ArrayDiff[T comparable](src []T, arrays ...[]T) []T {
+	var elemMap = make(map[T]bool)
+	for _, array := range arrays {
+		for i := range array {
+			elemMap[array[i]] = true
+		}
+	}
+	var result []T
+	for i := range src {
+		if !elemMap[src[i]] {
+			result = append(result, src[i])
+		}
+	}
+	return result
+}
