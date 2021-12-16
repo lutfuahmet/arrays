@@ -9,3 +9,11 @@ go get github.com/lutfuahmet/arrays
 
 ## Requirements
 Go 1.18 or above.
+
+## Functions
+- InArray
+- ArrayChunk
+- ArrayUnique
+- ArrayUniqueMerge
+- ArrayDiff
+- ArrayFilter
