@@ -88,3 +88,12 @@ func ArrayFilter[T any](src []T, filter func(item T) bool) []T {
 	}
 	return result
 }
+
+// ArrayMap maps the array with the callback function
+func ArrayMap[T any, U any](src []T, callback func(item T) U) []U {
+	var result []U
+	for i := range src {
+		result = append(result, callback(src[i]))
+	}
+	return result
+}
