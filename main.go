@@ -77,3 +77,14 @@ func ArrayDiff[T comparable](src []T, arrays ...[]T) []T {
 	}
 	return result
 }
+
+// ArrayFilter filters the array with the callback function
+func ArrayFilter[T any](src []T, filter func(item T) bool) []T {
+	var result []T
+	for i := range src {
+		if filter(src[i]) {
+			result = append(result, src[i])
+		}
+	}
+	return result
+}
